@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beranda</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f6f4;--ink:#0f5477;--muted:#51636b;--card:#d42b2b;--line:#d5e0dc;--accent:#a38b1d;--accent-ink:#ffffff;--sun:#f2b84b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a1f;--ink:#e8f1ee;--muted:#9bb0b0;--card:#15262c;--line:#26404a;--accent:#34c4b4;--accent-ink:#06221f;--sun:#f2b84b}}
+:root[data-theme="dark"]{--bg:#0e1a1f;--ink:#e8f1ee;--muted:#9bb0b0;--card:#15262c;--line:#26404a;--accent:#34c4b4;--accent-ink:#06221f;--sun:#f2b84b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5vw;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+nav{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+nav a{padding:8px 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:var(--card);outline:2px solid var(--accent)}
+nav a.on{background:var(--accent);color:var(--accent-ink)}
+.badge{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--sun);color:#13232b;font-size:.78rem;text-align:center}
+main{padding:0 5vw 64px;max-width:1100px;margin:0 auto}
+.hero{padding:9vh 0 6vh}
+.hero h1{margin:0;font-size:clamp(3.2rem,12vw,7.5rem);line-height:.95;letter-spacing:-.05em;font-weight:800}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.15rem;margin:20px 0 28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.tile{display:block;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);text-decoration:none}
+.tile:nth-child(2){border-radius:28px 8px 28px 8px}
+.tile h2{margin:0 0 6px;font-size:1.25rem}
+.tile span{color:var(--muted);font-size:.95rem}
+.tile:hover,.tile:focus-visible{border-color:var(--accent)}
+footer{padding:24px 5vw;color:var(--muted);border-top:1px solid var(--line);text-align:center}
+@media (max-width:640px){.bar{flex-direction:column;align-items:flex-start;gap:8px}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">Tokoku</div>
+  <nav aria-label="Menu utama">
+    <a class="on" href="#home" aria-current="page">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#keranjang">Keranjang<span class="badge">0</span></a>
+    <a href="#pengaturan">Pengaturan</a>
+  </nav>
+</header>
+<main id="home">
+  <section class="hero">
+    <h1>Home</h1>
+    <p>Selamat datang. Lihat produk terbaru, telusuri galeri, atau cek keranjang belanjamu.</p>
+    <a class="btn" href="#produk">Lihat produk</a>
+  </section>
+  <section class="grid" aria-label="Pintasan">
+    <a class="tile" id="produk" href="#produk"><h2>Produk</h2><span>Jelajahi semua produk.</span></a>
+    <a class="tile" id="galeri" href="#galeri"><h2>Galeri</h2><span>Foto dan inspirasi.</span></a>
+    <a class="tile" id="keranjang" href="#keranjang"><h2>Keranjang</h2><span>Belum ada barang.</span></a>
+    <a class="tile" id="pengaturan" href="#pengaturan"><h2>Pengaturan</h2><span>Atur akun dan tampilan.</span></a>
+  </section>
+</main>
+<footer>© Tokoku</footer>
+<script> 
